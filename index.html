@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" />
 
   <style>
-    /* ===== Base Styling ===== */
     body {
       font-family: "Inter", sans-serif;
       background: #000;
@@ -21,7 +20,7 @@
       padding: 0;
     }
 
-    /* ===== Background Image ===== */
+    /* Background image */
     body::before {
       content: "";
       position: fixed;
@@ -53,7 +52,7 @@
       z-index: -1;
     }
 
-    /* ===== Intro Video ===== */
+    /* Intro video */
     #intro-screen {
       position: fixed;
       top: 0;
@@ -74,7 +73,7 @@
       object-fit: cover;
     }
 
-    /* ===== Confetti ===== */
+    /* Confetti */
     .confetti {
       position: fixed;
       width: 10px;
@@ -90,11 +89,11 @@
       100% { transform: translate(var(--x), var(--y)) rotate(720deg); opacity: 0; }
     }
 
-    /* ===== Text & Fade ===== */
-    .fade-in { opacity: 0; transform: translateY(20px); transition: all 1s ease-out; }
+    /* Fade animation */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: all 1.2s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* ===== Music Button ===== */
+    /* Music button */
     #music-btn {
       position: fixed;
       top: 20px;
@@ -123,7 +122,7 @@
       100% { box-shadow: 0 0 0 0 rgba(245, 158, 176, 0); }
     }
 
-    /* ===== Gradient Animation ===== */
+    /* Gradient text */
     .animate-gradient {
       background: linear-gradient(90deg, #f472b6, #a78bfa, #34d399, #f87171);
       background-size: 400% 400%;
@@ -138,7 +137,7 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* ===== Responsive Text ===== */
+    /* Responsive */
     @media (max-width: 640px) {
       h1 { font-size: 2.2rem; }
       h2 { font-size: 1.5rem; }
@@ -147,79 +146,104 @@
     }
   </style>
 </head>
+
 <body>
 
-  <!-- 🎥 INTRO VIDEO -->
+  <!-- 🎥 Intro Video -->
   <div id="intro-screen">
     <video id="intro-video" autoplay muted playsinline>
       <source src="intro.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- 🎊 CONFETTI CONTAINER -->
+  <!-- 🎊 Confetti -->
   <div id="confetti-container"></div>
 
-  <!-- 🎵 BACKGROUND MUSIC -->
+  <!-- 🎵 Background Music -->
   <audio id="bg-music" loop preload="auto">
     <source src="happy.mp3" type="audio/mpeg" />
   </audio>
   <button id="music-btn">Play Music 🎶</button>
 
-  <!-- 💖 MAIN CONTENT -->
+  <!-- 💖 Main Content -->
   <main id="main-content" class="opacity-0 transition-opacity duration-1000">
-    <!-- Your birthday content here (kept same as yours above) -->
-    <!-- ... keep all your h1, p, and sections here ... -->
-      Hey Sindhu,
-It’s not about how I am to you, but how you’ve become a part of me.
-I still remember how we first got connected — just a simple thing, about attendance — and somehow, without even realizing it, you started meaning so much more.
-          </p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-My days once began with your good mornings and ended with your good nights.
-I never understood how I started sharing everything with you — every thought, every worry, every little ache in my heart. Maybe it was your black magic 😅, or maybe it was just you — the comfort I never saw coming.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-Every time we talked, my mind felt lighter, my heart calmer.
-Once you said, “Why don’t you talk with your favorite person? It helps with migraines.”
-I didn’t understand it back then, but now I do — you were that person who could ease my pain without even trying.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-But July… that month still hurts to remember.
-I know circumstances made you lose patience and speak the way you did, but trust me — I never held it against you. Some bonds are too precious to carry bitterness.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-I never wanted to lose you, because no one could ever fill the space you’ve left behind.
-Still, no matter what happens, I’ll always remain your shadow — close enough to care, far enough not to disturb. If you ever face anything, just drop a single message… I’ll do everything I can, until the very edge of my limits.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-The care I’ve shown you — it’s the most I’ve ever given anyone.
-Not because of how much, but because of who you are.
-You’re the only one who could take everything from me — my thoughts, my calm, my time — and still, I’d never ask for the same in return.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-I still remember pushing you to prepare for your exams after that Kochi trip — the one you loved the most, from Dondaparthy to Scindia. I was genuinely happy that day; I thought I’d missed that trip, but maybe fate wanted me to have that one memory with you.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-And when the time comes for me to leave, I’ll go quietly… like I never existed.
-Don’t take my words too deep into your heart — you already know I overthink like a psychiatrist person.
-But still, every memory, every word, every moment with you — it’s all etched deep in me.
 
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-I had prepared everything for your birthday — not for a grand celebration, but just to see that spark of happiness in your eyes. Maybe I missed it, but that’s alright… missing things has become a part of my life now.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-Still, I truly hope today brings you peace and joy — especially at the old age home. If possible, do something kind for them… maybe provide a few of their needs. That’s the best way you could celebrate — spreading smiles where they’re most needed.
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-I don’t have much more to say — just be happy, that’s all I wish.
-Whether you see the link I shared or not, I don’t really know… and I won’t expect it either, because you once said — never expect anything. 🤞
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-Some wishes remain unspoken, some memories remain unsent — but feelings like these, they never fade. 
+    <!-- ✨ Birthday Heading -->
+    <section class="text-center py-16 px-4 fade-in" id="intro-text">
+      <h1 class="text-6xl sm:text-7xl font-extrabold mb-4 animate-gradient" style="font-family: 'Great Vibes', cursive;">
+        Happiest Birthday, Sindhuuu!!
+      </h1>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        You’ve been my calm in chaos, my laughter in silence, and the person who makes every ordinary moment feel magical (since you are a Black Magician).
+      </p>
+    </section>
 
-</p><p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-Because some people don’t just enter your life… they stay, even in your silence.but i will never be the silence one..💫
+    <!-- 💌 Heartfelt Letter -->
+    <section class="space-y-6 text-center">
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        Hey Sindhu, It’s not about how I am to you, but how you’ve become a part of me.
+        I still remember how we first got connected — just a simple thing, about attendance — and somehow, without even realizing it, you started meaning so much more.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        My days once began with your good mornings and ended with your good nights.
+        I never understood how I started sharing everything with you — every thought, every worry, every little ache in my heart. Maybe it was your black magic 😅, or maybe it was just you — the comfort I never saw coming.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        Every time we talked, my mind felt lighter, my heart calmer.
+        Once you said, “Why don’t you talk with your favorite person? It helps with migraines.”
+        I didn’t understand it back then, but now I do — you were that person who could ease my pain without even trying.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        But July… that month still hurts to remember.
+        I know circumstances made you lose patience and speak the way you did, but trust me — I never held it against you. Some bonds are too precious to carry bitterness.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        I never wanted to lose you, because no one could ever fill the space you’ve left behind.
+        Still, no matter what happens, I’ll always remain your shadow — close enough to care, far enough not to disturb. If you ever face anything, just drop a single message… I’ll do everything I can, until the very edge of my limits.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        The care I’ve shown you — it’s the most I’ve ever given anyone.
+        Not because of how much, but because of who you are.
+        You’re the only one who could take everything from me — my thoughts, my calm, my time — and still, I’d never ask for the same in return.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        I still remember pushing you to prepare for your exams after that Kochi trip — the one you loved the most, from Dondaparthy to Scindia. I was genuinely happy that day; I thought I’d missed that trip, but maybe fate wanted me to have that one memory with you.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        And when the time comes for me to leave, I’ll go quietly… like I never existed.
+        Don’t take my words too deep into your heart — you already know I overthink like a psychiatrist person.
+        But still, every memory, every word, every moment with you — it’s all etched deep in me.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        I had prepared everything for your birthday — not for a grand celebration, but just to see that spark of happiness in your eyes. Maybe I missed it, but that’s alright… missing things has become a part of my life now.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        Still, I truly hope today brings you peace and joy — especially at the old age home. If possible, do something kind for them… maybe provide a few of their needs. That’s the best way you could celebrate — spreading smiles where they’re most needed.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        I don’t have much more to say — just be happy, that’s all I wish.
+        Whether you see the link I shared or not, I don’t really know… and I won’t expect it either, because you once said — never expect anything. 🤞
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        Some wishes remain unspoken, some memories remain unsent — but feelings like these, they never fade.
+      </p>
+      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+        Because some people don’t just enter your life… they stay, even in your silence. But I will never be the silent one..💫
+      </p>
+    </section>
 
   </main>
 
   <script>
-    // 🎥 Fade main page after intro video
+    // 🎥 After intro video ends
     const video = document.getElementById("intro-video");
     video.addEventListener("ended", () => {
       document.getElementById("intro-screen").style.display = "none";
       document.getElementById("main-content").style.opacity = "1";
+      document.querySelectorAll(".fade-in").forEach(el => el.classList.add("visible"));
     });
 
-    // 🎊 Confetti Animation
+    // 🎊 Confetti
     const confettiContainer = document.getElementById("confetti-container");
     function createBlast(xOrigin, yOrigin, count = 35) {
       const colors = ["#f472b6", "#a78bfa", "#facc15", "#34d399", "#60a5fa", "#f87171"];
@@ -245,7 +269,7 @@ Because some people don’t just enter your life… they stay, even in your sile
       createBlast("100vw", "100vh");
     }, 800);
 
-    // 🎵 Music Controls
+    // 🎵 Music Button
     const music = document.getElementById("bg-music");
     const btn = document.getElementById("music-btn");
     btn.addEventListener("click", () => {
@@ -260,14 +284,12 @@ Because some people don’t just enter your life… they stay, even in your sile
       }
     });
 
-    // ✨ Confetti on double-click of music button
+    // ✨ Confetti on double-click
     btn.addEventListener("dblclick", () => {
-      createBlast(
-        Math.random() * window.innerWidth + "px",
-        Math.random() * window.innerHeight + "px",
-        50
-      );
+      createBlast(Math.random() * window.innerWidth + "px", Math.random() * window.innerHeight + "px", 50);
     });
   </script>
+
 </body>
 </html>
+
