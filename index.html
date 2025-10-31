@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday, My Special Friend 💖</title>
+  <title>Happiest Birthday, My Special one</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet" />
 
@@ -89,9 +89,20 @@
       100% { transform: translate(var(--x), var(--y)) rotate(720deg); opacity: 0; }
     }
 
-    /* Fade animation */
+    /* Fade animation (for intro text) */
     .fade-in { opacity: 0; transform: translateY(20px); transition: all 1.2s ease-out; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ✨ NEW: Fade-in on Scroll (for letter paragraphs) */
+    .fade-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+    .fade-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Music button */
     #music-btn {
@@ -137,38 +148,58 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* ✨ NEW: Cleaner .letter-p class */
+    .letter-p {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 0.75rem; /* rounded-xl */
+      max-width: 42rem; /* max-w-2xl */
+      margin-left: auto;
+      margin-right: auto;
+      color: #e5e7eb; /* text-gray-100 */
+      font-size: 1.25rem; /* text-xl */
+    }
+
     /* Responsive */
     @media (max-width: 640px) {
       h1 { font-size: 2.2rem; }
       h2 { font-size: 1.5rem; }
       p { font-size: 1rem; padding: 0 10px; }
       #music-btn { top: 12px; right: 12px; padding: 7px 12px; }
+      
+      /* Adjust letter-p for mobile */
+      .letter-p {
+        font-size: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🎥 Intro Video -->
+  <noscript>
+    <div style="width: 100%; padding: 20px; background: #ffc; color: #000; text-align: center; position: fixed; top: 0; z-index: 5000;">
+      Please enable JavaScript to view this special birthday surprise!
+    </div>
+  </noscript>
+
   <div id="intro-screen">
-    <video id="intro-video" autoplay muted playsinline>
+    <video id="intro-video" autoplay muted playsinline onerror="this.parentElement.style.display='none'; document.getElementById('main-content').style.opacity='1'; document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));">
       <source src="intro.mp4" type="video/mp4">
     </video>
   </div>
 
-  <!-- 🎊 Confetti -->
   <div id="confetti-container"></div>
 
-  <!-- 🎵 Background Music -->
   <audio id="bg-music" loop preload="auto">
     <source src="happy.mp3" type="audio/mpeg" />
   </audio>
   <button id="music-btn">Play Music 🎶</button>
 
-  <!-- 💖 Main Content -->
   <main id="main-content" class="opacity-0 transition-opacity duration-1000">
 
-    <!-- ✨ Birthday Heading -->
     <section class="text-center py-16 px-4 fade-in" id="intro-text">
       <h1 class="text-6xl sm:text-7xl font-extrabold mb-4 animate-gradient" style="font-family: 'Great Vibes', cursive;">
         Happiest Birthday, Sindhuuu!!
@@ -178,69 +209,82 @@
       </p>
     </section>
 
-    <!-- 💌 Heartfelt Letter -->
     <section class="space-y-6 text-center">
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         Hey Sindhu, It’s not about how I am to you, but how you’ve become a part of me.
         I still remember how we first got connected — just a simple thing, about attendance — and somehow, without even realizing it, you started meaning so much more.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         My days once began with your good mornings and ended with your good nights.
         I never understood how I started sharing everything with you — every thought, every worry, every little ache in my heart. Maybe it was your black magic 😅, or maybe it was just you — the comfort I never saw coming.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         Every time we talked, my mind felt lighter, my heart calmer.
         Once you said, “Why don’t you talk with your favorite person? It helps with migraines.”
         I didn’t understand it back then, but now I do — you were that person who could ease my pain without even trying.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         But July… that month still hurts to remember.
         I know circumstances made you lose patience and speak the way you did, but trust me — I never held it against you. Some bonds are too precious to carry bitterness.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         I never wanted to lose you, because no one could ever fill the space you’ve left behind.
         Still, no matter what happens, I’ll always remain your shadow — close enough to care, far enough not to disturb. If you ever face anything, just drop a single message… I’ll do everything I can, until the very edge of my limits.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         The care I’ve shown you — it’s the most I’ve ever given anyone.
         Not because of how much, but because of who you are.
         You’re the only one who could take everything from me — my thoughts, my calm, my time — and still, I’d never ask for the same in return.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         I still remember pushing you to prepare for your exams after that Kochi trip — the one you loved the most, from Dondaparthy to Scindia. I was genuinely happy that day; I thought I’d missed that trip, but maybe fate wanted me to have that one memory with you.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         And when the time comes for me to leave, I’ll go quietly… like I never existed.
         Don’t take my words too deep into your heart — you already know I overthink like a psychiatrist person.
         But still, every memory, every word, every moment with you — it’s all etched deep in me.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         I had prepared everything for your birthday — not for a grand celebration, but just to see that spark of happiness in your eyes. Maybe I missed it, but that’s alright… missing things has become a part of my life now.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         Still, I truly hope today brings you peace and joy — especially at the old age home. If possible, do something kind for them… maybe provide a few of their needs. That’s the best way you could celebrate — spreading smiles where they’re most needed.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         I don’t have much more to say — just be happy, that’s all I wish.
-        Whether you see the link I shared or not, I don’t really know… and I won’t expect it either, because you once said — never expect anything. 🤞
+        Whether you see the link I shared or not, I don’t really know… and I won’t expect it either 🤞.....
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
+      <p class="letter-p fade-scroll">
         Some wishes remain unspoken, some memories remain unsent — but feelings like these, they never fade.
       </p>
-      <p class="text-xl text-gray-100 max-w-2xl mx-auto bg-black/50 p-4 rounded-xl">
-        Because some people don’t just enter your life… they stay, even in your silence. But I will never be the silent one..💫
+      <p class="letter-p fade-scroll" style="padding-bottom: 4rem;"> Because some people don’t just enter your life… they stay, even in your silence...💫
       </p>
     </section>
 
   </main>
 
   <script>
-    // 🎥 After intro video ends
+    // 🎵 Get music elements
+    const music = document.getElementById("bg-music");
+    const btn = document.getElementById("music-btn");
     const video = document.getElementById("intro-video");
-    video.addEventListener("ended", () => {
+
+    // 🎥 After intro video ends
+    video.addEventListener("ended", async () => {
       document.getElementById("intro-screen").style.display = "none";
       document.getElementById("main-content").style.opacity = "1";
       document.querySelectorAll(".fade-in").forEach(el => el.classList.add("visible"));
+      
+      // ✨ NEW: Try to play music automatically
+      try {
+        await music.play();
+        // If successful, update the button
+        btn.textContent = "Pause Music 🎵";
+        btn.classList.add("playing");
+      } catch (err) {
+        // If it fails (autoplay blocked), do nothing.
+        console.warn("Autoplay was blocked by the browser.");
+      }
     });
 
     // 🎊 Confetti
@@ -258,7 +302,7 @@
         confetti.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
         confetti.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
         confettiContainer.appendChild(confetti);
-        setTimeout(() => confetti.remove(), 2500);
+        setTimeout(() => confetti.remove(), 25000);
       }
     }
 
@@ -267,11 +311,9 @@
       createBlast("100vw", "0px");
       createBlast("0px", "100vh");
       createBlast("100vw", "100vh");
-    }, 800);
+    }, 10000);
 
     // 🎵 Music Button
-    const music = document.getElementById("bg-music");
-    const btn = document.getElementById("music-btn");
     btn.addEventListener("click", () => {
       if (music.paused) {
         music.play();
@@ -288,8 +330,25 @@
     btn.addEventListener("dblclick", () => {
       createBlast(Math.random() * window.innerWidth + "px", Math.random() * window.innerHeight + "px", 50);
     });
+
+    // ✨ NEW: Fade-in on Scroll
+    const faders = document.querySelectorAll(".fade-scroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target); // Stop watching once it's visible
+          }
+        });
+      },
+      { threshold: 0.25 } // Trigger when 25% of the element is visible
+    );
+
+    faders.forEach((fader) => {
+      observer.observe(fader);
+    });
   </script>
 
 </body>
 </html>
-
